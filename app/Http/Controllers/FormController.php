@@ -187,14 +187,25 @@ class FormController extends Controller
 
         DB::table('products')
         ->where('Productid', $idUpdate)
-        ->update(
-            ['ProductName'=>$nameProduct],
-            ['ProductPrice'=>$productPrice],
-            ['ProductShortDesc'=>$productshortDesc],
-            ['ProductSize'=>json_encode($dataSize)],
-            ['productColor'=>json_encode($dataColor)],
-            ['ProductLongDesc'=>$productLongDesc]);
-
+        ->update(['ProductPrice'=>$productPrice]);
+        DB::table('products')
+        ->where('Productid', $idUpdate)
+        ->update(['ProductName'=>$nameProduct]);
+        DB::table('products')
+        ->where('Productid', $idUpdate)
+        ->update(['ProductShortDesc'=>$productshortDesc]);
+        DB::table('products')
+        ->where('Productid', $idUpdate)
+        ->update(['ProductSize'=>json_encode($dataSize)]);
+        DB::table('products')
+        ->where('Productid', $idUpdate)
+        ->update(['productColor'=>json_encode($dataColor)]);
+        DB::table('products')
+        ->where('Productid', $idUpdate)
+        ->update(['ProductLongDesc'=>$productLongDesc]);
+        DB::table('products')
+        ->where('Productid', $idUpdate)
+        ->update(['category_id'=>$productCategory]);
 //        return back()->with('success', 'Your product has been updated successfully');
         return redirect('/product-detail/'.$idUpdate);
         // return $productPrice;

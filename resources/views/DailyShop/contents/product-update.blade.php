@@ -90,14 +90,14 @@
                                             </p>
                                                 <select id="" name="catagegory">
                                                     <option selected="1" value="{{$productDetail->productCategory}}">{{$productDetail->productCategory}}</option>
-                                                    <option value="men">men</option>
-                                                    <option value="women">women</option>
-                                                    <option value="kids">kids</option>
-                                                    <option value="sports">sports</option>
-                                                    <option value="digital">digital</option>
-                                                    <option value="furniture">furniture</option>
+                                                    <option value="1">men</option>
+                                                    <option value="2">women</option>
+                                                    <option value="3">kids</option>
+                                                    <option value="4">sports</option>
+                                                    <option value="5">digital</option>
+                                                    <option value="6">furniture</option>
                                                     @role('admin')
-                                                    <option value="slide">slides</option>
+                                                    <option value="7">slides</option>
                                                     @endrole
                                                 </select>
                                             {{--<form action="">--}}
