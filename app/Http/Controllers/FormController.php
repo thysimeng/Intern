@@ -155,10 +155,10 @@ class FormController extends Controller
                 $data[] = $name;
             }
 
-            DB::table('products')->where('ProductID', $idUpdate)->update(
+            DB::table('products')->where('Productid', $idUpdate)->update(
                 ['ProductImagePhoto'=>json_encode($data)]
             );
-            DB::table('products')->where('ProductID', $idUpdate)->update(
+            DB::table('products')->where('Productid', $idUpdate)->update(
                 ['ProductImage'=>$data[0]]);
         }
 
@@ -185,19 +185,19 @@ class FormController extends Controller
             }
         }
 
-        DB::table('products')->where('ProductID', $idUpdate)->update(
-//            ['ProductImagePhoto'=>json_encode($data)],
+        DB::table('products')
+        ->where('Productid', $idUpdate)
+        ->update(
             ['ProductName'=>$nameProduct],
             ['ProductPrice'=>$productPrice],
             ['ProductShortDesc'=>$productshortDesc],
             ['ProductSize'=>json_encode($dataSize)],
             ['productColor'=>json_encode($dataColor)],
-//            ['ProductImage'=>$new_name],
-            ['productCategory'=>$productCategory],
             ['ProductLongDesc'=>$productLongDesc]);
 
 //        return back()->with('success', 'Your product has been updated successfully');
         return redirect('/product-detail/'.$idUpdate);
+        // return $productPrice;
     }
 
     /**
@@ -220,7 +220,7 @@ class FormController extends Controller
      */
     public function destroy($deleteID)
     {
-        Products::where('ProductID', $deleteID)->delete();
+        Product::where('Productid', $deleteID)->delete();
         return redirect()->back();
     }
 
@@ -235,23 +235,9 @@ class FormController extends Controller
 
     public function updateRoleAdmin($userID)
     {
-        // Role::create(['name' => 'user']);
-        // Permission::create(['name'=>'delete']);
-//        $role = Role::findById(2);
-//         $permission = Permission::findById(2);
-//         $role->givePermissionTo($permission);
-        // $permission->assignRole($role);
-//        $user = DB::table('users')->find(7);
-//        Auth()->user(7)->assignRole($role);
-//        $user->syncRoles([$role, 'admin']);
-//        $user->assignRole($role);
         $role = Role::findById(2);
         $user = User::find($userID);
-//        $user = DB::table('users')->find(7);
         $user->assignRole($role);
-//        $this->userRepository->assignRole()
-//        $a = $this->userRepository->create($admin);
-//        $this->userRepository->assignRole($role, $user);
 
         return redirect()->back();
     }

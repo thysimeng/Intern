@@ -9,7 +9,7 @@ class ProducrViewController extends Controller
 {
     public function index()
     {
-        $products = DB::table('products')->get();
+        $products = DB::table('products')->limit(2)->get();
         return view('DailyShop.productShow',compact('products'));
     }
 

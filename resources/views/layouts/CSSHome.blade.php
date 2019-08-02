@@ -478,8 +478,6 @@
     <!-- Custom js -->
     <script src="{{asset('js/custom.js')}}"></script>
     <script type="text/javascript">
-
-
         $(document).ready(function() {
 
             $(".btn-success").click(function(){

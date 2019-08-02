@@ -24,3 +24,8 @@ Route::get('/product-upload', 'UploadController@index')->name('uploadProduct');
 Route::post('/product-upload','FormController@store')->name('productUpload');
 Route::get('/product-detail/{idProduct}', 'ProductDetailController@index')->name('productDetail');
 Route::get('/product-category/{category}', 'ProducrViewController@category')->name('productCategory');
+Route::get('/user-delete/{deleteID}', 'FormController@deleteUser')->name('userDelete');
+Route::get('/product-delete/{deleteID}', 'FormController@destroy')->name('productDelete');
+Route::get('/product-update/{updateID}', 'ProductUpdateController@index')->name('productUpdate');
+Route::post('/product-update', 'FormController@edit')->name('productUpdate');
+

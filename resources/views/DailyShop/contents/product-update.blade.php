@@ -51,7 +51,7 @@
                                 <div class="col-md-7 col-sm-7 col-xs-12">
                                     <div class="aa-product-view-content">
                                         {{--<h3>T-Shirt</h3>--}}
-                                        <input type="hidden" name="idUpdate" value="{{$productDetail->ProductID}}">
+                                        <input type="hidden" name="idUpdate" value="{{$productDetail->Productid}}">
                                         <input type="text" name="name" value="{{$productDetail->ProductName}}">
                                         <div class="aa-price-block">
                                             {{--<span class="aa-product-view-price">$34.99</span>--}}
